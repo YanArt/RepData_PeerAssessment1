@@ -53,7 +53,7 @@ ggplot(ttl_steps_day, mapping = aes(x = tot_steps))+
     labs(x = "Total steps", title = "Total number of steps taken each day")
 ```
 
-![](/PA1_template_files/figure-html/total steps histogram-1.png)<!-- -->
+![](PA1_template_files/figure-html/total_steps_per_day_histogram-1.png)<!-- -->
 
 **Step 3. Mean and median number of steps taken each day**  
 
@@ -92,7 +92,7 @@ ggplot(av_int_act, mapping = aes(x = interval, y = avg_steps))+
          title = "Average steps taken per time interval")
 ```
 
-![](/PA1_template_files/figure-html/time series plot of the average number of steps taken per 5 min interval-1.png)<!-- -->
+![](PA1_template_files/figure-html/time_series_plot_of_steps_taken_per_5_min_interval-1.png)<!-- -->
 
 **Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?**  
 
@@ -150,10 +150,10 @@ ttl_steps_day2 <- no_na_dataset %>% select(date, steps) %>%
 
 ggplot(ttl_steps_day2, mapping = aes(x = tot_steps))+
     geom_histogram(stat = "bin", bins = 30, na.rm = TRUE, fill = "steelblue")+
-    labs(x = "Total steps", title = "Total number of steps taken each day (imputed)")
+    labs(x = "Total steps", title = "Total number of steps taken each day imputed")
 ```
 
-![](/PA1_template_files/figure-html/total number of steps taken each day (imputed)-1.png)<!-- -->
+![](PA1_template_files/figure-html/total_steps_taken_each_day_imputed-1.png)<!-- -->
 
 As you can see, our histogram changed. It means that the way we inputed missing values has changed the data.  
 
@@ -215,4 +215,4 @@ ggplot(av_int_act_wd, mapping = aes(x = interval, y = avg_steps))+
          title = "Average steps taken per time interval on weekdays and weekend")
 ```
 
-![](/PA1_template_files/figure-html/average steps on weekdays and weekend-1.png)<!-- -->
+![](PA1_template_files/figure-html/average_steps_on_weekdays_and_weekend-1.png)<!-- -->
