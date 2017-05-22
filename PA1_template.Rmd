@@ -26,7 +26,7 @@ library(tidyverse)
 **Step 3. Unpak the data set**  
 
 ```{r unpack}
-unzip("Factivity.zip")
+## unzip("Factivity.zip")
 ```
 
 **Step 4. Read the data set into R**  
