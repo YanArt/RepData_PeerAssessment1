@@ -46,7 +46,7 @@ ttl_steps_day <- orgnl_dataset %>% select(date, steps) %>% filter(steps != "NA")
 
 **Step 2. Plot a histogram of the total number of steps taken each day**  
 
-```{r total steps histogram}
+```{r total steps histogram, fig.keep='all', fig.show='asis'}
 
 ggplot(ttl_steps_day, mapping = aes(x = tot_steps))+
     geom_histogram(stat = "bin", bins = 30, na.rm = TRUE, fill = "steelblue")+
@@ -70,7 +70,7 @@ median(ttl_steps_day$tot_steps)
 
 To see the average daily activity pattern we need to average the number of steps taken within each of the 5 min intervals across all available days and plot it.
 
-```{r time series plot of the average number of steps taken per 5 min interval}
+```{r time series plot of the average number of steps taken per 5 min interval, fig.keep='all', fig.show='asis'}
 av_int_act <- orgnl_dataset %>% select(interval, steps) %>%
     group_by(interval) %>% summarise(avg_steps = mean(steps, na.rm = TRUE))
 
@@ -116,7 +116,7 @@ summary(no_na_dataset)
 
 Now, let's recalculate total number of steps taken each day using data from the new dataset with imputed missing values and show it on a histogram.  
 
-```{r total number of steps taken each day (imputed), message=FALSE, warning=FALSE}
+```{r total number of steps taken each day (imputed), message=FALSE, warning=FALSE, fig.keep='all', fig.show='asis'}
 ttl_steps_day2 <- no_na_dataset %>% select(date, steps) %>%
     group_by(date) %>% summarise(tot_steps = sum(steps))
 
@@ -172,7 +172,7 @@ Now, let's make a panel plot with 2 time series plots.
 First - showing average number of steps taken within each 5 min interval on weekdays.  
 Second - showing average number of steps taken within each 5 min interval on weekend.
 
-```{r average steps on weekdays and weekend}
+```{r average steps on weekdays and weekend, fig.keep='all', fig.show='asis'}
 
 ggplot(av_int_act_wd, mapping = aes(x = interval, y = avg_steps))+
     geom_line(colour = "steelblue", size = 1)+
